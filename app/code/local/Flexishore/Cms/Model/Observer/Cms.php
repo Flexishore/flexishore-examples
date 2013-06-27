@@ -16,8 +16,8 @@ class Flexishore_Cms_Model_Observer_Cms
      */
     public function prepareForm(Varien_Event_Observer $observer)
     {
-        $form = $observer->getEvent()->getForm();
-
+        $form = $observer->getEvent()->getForm();               
+        
         $fieldset = $form->addFieldset(
             'image_fieldset',
             array(

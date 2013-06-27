@@ -9,13 +9,24 @@
     <global>
 
         <models>
-            <cms>
+            <flexishore_cms>
                 <class>Flexishore_Cms_Model</class>
-            </cms>
+            </flexishore_cms>
         </models>
+        
+        <blocks>
+            <flexishore_cms>
+                <class>Flexishore_Cms_Block</class>
+            </flexishore_cms>
+            <adminhtml>
+                <rewrite>
+                    <cms_page_edit_form>Flexishore_Cms_Block_Adminhtml_Cms_Page_Edit_Form</cms_page_edit_form>
+                </rewrite>
+            </adminhtml>
+        </blocks>
 
         <resources>
-            <cms_setup>
+            <flexishore_cms_setup>
                 <setup>
                     <module>Flexishore_Cms</module>
                     <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
@@ -23,28 +34,28 @@
                 <connection>
                     <use>core_setup</use>
                 </connection>
-            </cms_setup>
-            <cms_write>
+            </flexishore_cms_setup>
+            <flexishore_cms_write>
                 <connection>
                     <use>core_write</use>
                 </connection>
-            </cms_write>
-            <cms_read>
+            </flexishore_cms_write>
+            <flexishore_cms_read>
                 <connection>
                     <use>core_read</use>
                 </connection>
-            </cms_read>
+            </flexishore_cms_read>
         </resources>
 
     </global>
 
-    <adminhtml>
+    <adminhtml>        
         <events>
             <cms_page_prepare_save>
                 <observers>
                     <flexishore_cms_save_page>
                         <type>singleton</type>
-                        <class>cms/observer_cms</class>
+                        <class>flexishore_cms/observer_cms</class>
                         <method>savePage</method>
                     </flexishore_cms_save_page>
                 </observers>
@@ -54,7 +65,7 @@
                 <observers>
                     <flexishore_cms_prepare_form>
                         <type>singleton</type>
-                        <class>cms/observer_cms</class>
+                        <class>flexishore_cms/observer_cms</class>
                         <method>prepareForm</method>
                     </flexishore_cms_prepare_form>
                 </observers>
