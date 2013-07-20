@@ -9,11 +9,10 @@
  */
 
 $installer = $this;
-$setup = new Mage_Eav_Model_Entity_Setup('core_setup');
 $installer->startSetup();
 
-$installer->run('
-  ALTER TABLE  `cms_page` ADD  `background` VARCHAR( 255 ) NULL;
-');
+$conn = $installer->getConnection();
+$table = $installer->getTable('cms_page');
+$conn->addColumn($table, 'background', 'varchar(255)');
 
 $installer->endSetup();
