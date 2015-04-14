@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<layout version="0.1.0">
+    <cms_page_view translate="label">
+        <reference name="content">
+			<block type="core/template" name="flexishore.cms.page" template="flexishore_cms/page.phtml" before="-" />
+        </reference>
+    </cms_page_view>
+</layout>

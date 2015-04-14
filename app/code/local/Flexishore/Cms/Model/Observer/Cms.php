@@ -68,7 +68,7 @@ class Flexishore_Cms_Model_Observer_Cms
             $model->setBackground($data['background']);
         } else {
             $data = $request->getPost();
-            if($data['background']['delete'] == 1) {
+            if( isset($data['background']['delete']) && $data['background']['delete'] == 1) {
                 $data['background'] = '';
                 $model->setBackground($data['background']);
             } else {

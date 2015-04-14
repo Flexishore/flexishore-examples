@@ -1,0 +1,10 @@
+<?php
+$page = Mage::getSingleton('cms/page');
+//$helper = Mage::helper('cms');
+//$processor = $helper->getPageTemplateProcessor();
+//$imgSrc= $processor->filter($page->getBackground());
+$imgSrc= $page->getBackground();
+$Mage_Core_Model_Store= Mage::app()->getStore();
+$secure= $Mage_Core_Model_Store->isCurrentlySecure();
+?>
+<img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA, $secure) . $imgSrc; ?>" />
