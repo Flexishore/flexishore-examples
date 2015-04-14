@@ -49,7 +49,7 @@
 
     </global>
 
-    <adminhtml>        
+    <adminhtml>
         <events>
             <cms_page_prepare_save>
                 <observers>
@@ -73,4 +73,13 @@
         </events>
     </adminhtml>
 
+    <frontend>
+        <layout>
+            <updates>
+                <flexishore_cms>
+                    <file>flexishore_cms.xml</file>
+                </flexishore_cms>
+            </updates>
+        </layout>
+    </frontend>
 </config>
